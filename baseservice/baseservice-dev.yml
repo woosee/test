@@ -1,0 +1,177 @@
+package com.kwikker.configsvr;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
+
+@SpringBootApplication
+@EnableConfigServer
+public class KwikkerConfigServerApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(KwikkerConfigServerApplication.class, args);
+    }
+
+}
+.
+server:
+ port: 8888
+spring:
+ profiles:
+   active: native
+ application:
+   name: configserver
+ cloud:
+   config:
+     server:
+       native:
+         search-locations: C:/Users/student/Downloads/kwikker-config-server-completed/kwikker-config-server/src/main/resources/socialservice
+.
+<dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    
+    </dependencies>
+.
+env: DEFAULT
+service: social
+server.port: 8081
+
+spring.datasource.driver-class-name: com.mysql.cj.jdbc.Driver
+spring.datasource.url: jdbc:mysql://codepresso.db.iwinv.net:3306/codepresso?serverTimezone=UTC
+spring.datasource.username: codepresso
+spring.datasource.password: codEpressO!2#4
+
+spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.MySQLDialect
+spring.jpa.properties.hibernate.show_sql: true
+spring.jpa.properties.hibernate.format_sql:  true
+spring.jpa.properties.hibernate.id.new_generator_mappings: false
+http://naver.me/5s5RGBYz
+cloud.naver.com
+네이버 클라우드
+소중한 폰 사진을 안전하게 보관하고, 함께보기로 가족, 친구들과 손쉽게 공유해 보세요!
+서비스 분리 된 버전 zip 파일 입니다.
+
+donghun [1:02 PM]
+.
+env: DEFAULT
+service: base
+server.port: 8080
+
+spring.datasource.driver-class-name: com.mysql.cj.jdbc.Driver
+spring.datasource.url: jdbc:mysql://codepresso.db.iwinv.net:3306/codepresso?serverTimezone=UTC
+spring.datasource.username: codepresso
+spring.datasource.password: codEpressO!2#4
+
+spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.MySQLDialect
+spring.jpa.properties.hibernate.show_sql: true
+spring.jpa.properties.hibernate.format_sql:  true
+spring.jpa.properties.hibernate.id.new_generator_mappings: false
+.
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.kwikker</groupId>
+    <artifactId>kwikker-baseline</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>kwikker-baseline</name>
+    <description>Twitter like simple sns application</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+    </dependencies>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
